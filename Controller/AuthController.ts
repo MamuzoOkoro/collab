@@ -25,7 +25,7 @@ export const registerUser = async (req:any,res:Response)=>{
             message:"User registered successfully",
             data:newUser
         })
-    } catch (error) {
+    } catch (error: any) {
         res.status(400).json({
             message:"Cannot register user",
             data:error.message
@@ -57,7 +57,7 @@ export const signIn = async (req:Request,res:Response)=>{
                 message:"Cannot find user"
             })
         }
-    } catch (error) {
+    } catch (error: any) {
         res.status(400).json({
             message:"cannot sign user in",
             data:error.message
@@ -73,7 +73,7 @@ export const findUser = async(req:Request,res:Response)=>{
             message:"Gotten user",
             data:oneUser?._id
         })
-    } catch (error) {
+    } catch (error: any) {
         res.status(400).json({
             message:"cannot get user",
             data:error.message
@@ -87,7 +87,7 @@ export const findUsers = async(req:Request,res:Response)=>{
             message:"Gotten all user",
             data:allUsers
         })
-    } catch (error) {
+    } catch (error: any) {
         res.status(400).json({
             message:"cannot get all users",
             data:error.message
@@ -106,7 +106,7 @@ export const updateUser = async(req:Request,res:Response)=>{
             message:"User updated",
             data:patchUser
         })
-    } catch (error) {
+    } catch (error: any) {
         res.status(400).json({
             message:"cannot update user",
             data:error.message
@@ -121,7 +121,7 @@ export const deleteUser = async(req:Request,res:Response)=>{
             message:"User deleted",
             data:removeUser
         })
-    } catch (error) {
+    } catch (error: any) {
         res.status(400).json({
             message:"cannot delete user",
             data:error.message
